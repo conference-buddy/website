@@ -1,0 +1,31 @@
+a.TextLink {
+  &.TextLink-primary {
+    color: $primary;
+    border-bottom: 2px solid $secondary;
+    background: linear-gradient($primary, $secondary 100%) bottom no-repeat;
+    background-size: 100% 0;
+    transition: background-size 0.1s;
+
+    &:hover {
+      background-size: 100% 100%;
+      text-decoration: none;
+      color: $light;
+    }
+  }
+}
+
+a.TextLink {
+  &.TextLink-secondary {
+    color: $secondary;
+    border-bottom: 2px solid $primary;
+    background: linear-gradient($secondary, $primary 100%) bottom no-repeat;
+    background-size: 100% 0;
+    transition: background-size 0.1s;
+
+    &:hover {
+      background-size: 100% 100%;
+      text-decoration: none;
+      color: $light;
+    }
+  }
+}

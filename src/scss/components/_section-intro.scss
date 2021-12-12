@@ -1,0 +1,57 @@
+.IntroSection {
+  min-height: 100vh;
+  text-shadow: 0px 0px 20px rgba(60, 60, 60, 0.3);
+
+  &.IntroSection-fullscreen-bg {
+    @include media-breakpoint-down(sm) {
+      background: linear-gradient(
+          rgba(40, 40, 40, 0.1),
+          rgba(40, 40, 40, 0.4) 35%,
+          rgba(40, 40, 40, 0.4) 75%,
+          rgba(40, 40, 40, 0.1)
+        ),
+        url(../images/background_intro_sm.jpg) center center / cover no-repeat;
+    }
+
+    @include media-breakpoint-up(md) {
+      background: linear-gradient(
+          rgba(40, 40, 40, 0.1),
+          rgba(40, 40, 40, 0.4) 35%,
+          rgba(40, 40, 40, 0.4) 75%,
+          rgba(40, 40, 40, 0.1)
+        ),
+        url(../images/background_intro.jpg) center center / cover no-repeat
+          fixed;
+    }
+  }
+
+  img.IntroSection-logo {
+    height: auto;
+    max-width: 30%;
+
+    @include media-breakpoint-up(md) {
+      max-width: 20%;
+    }
+  }
+  .IntroSection-logo-font {
+    font-size: 7.5vw;
+
+    @include media-breakpoint-up(md) {
+      font-size: 6vw;
+    }
+
+    @include media-breakpoint-up(lg) {
+      font-size: 5vw;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    .IntroSection-mouse-scroll-wrapper {
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      width: 30px;
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+.MainNav {
+  &.MainNav-bg-in {
+    background-color: rgba(0, 0, 0, 0.3);
+    @include transition(opacity, 1.5s ease-out);
+  }
+
+  &.MainNav-bg-out {
+    background-color: rgba(0, 0, 0, 0);
+    @include transition(opacity, 1s ease-out);
+  }
+}

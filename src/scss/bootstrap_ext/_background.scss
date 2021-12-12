@@ -1,0 +1,11 @@
+.bg-clip-ellipse {
+  @include media-breakpoint-up(md) {
+    position: relative;
+    -webkit-clip-path: $clip-path-ellipse;
+    clip-path: $clip-path-ellipse;
+  }
+}
+
+.bg-gradient {
+  background: linear-gradient(45deg, $primary 35%, $secondary 75%, $secondary);
+}

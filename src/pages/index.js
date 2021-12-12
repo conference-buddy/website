@@ -7,11 +7,13 @@ import ConfBuddy20Section from "./../components/section-confbuddy-20";
 
 const IndexPage = () => {
   return (
-    <div>
-      <IntroSection />
-      <AboutSection />
-      <ConfBuddy20Section />
-    </div>
+    <Layout>
+      <div>
+        <IntroSection />
+        <AboutSection />
+        <ConfBuddy20Section />
+      </div>
+    </Layout>
   );
 };
 

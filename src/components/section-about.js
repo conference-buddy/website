@@ -48,51 +48,6 @@ function AboutSection() {
               <p />
             </div>
           </div>
-
-          <div className="text-center pt-3 pb-5">
-            <div className="col">
-              <h2>Conference Buddy 2.0 is coming!</h2>
-              <p>
-                I'm actively working a release of a Conference Buddy web app!
-                You can follow along the progress in the{" "}
-                <a href="https://github.com/conference-buddy/conference-buddy-web-app#readme">
-                  github
-                </a>
-                !
-              </p>
-              <p>
-                If you want to be informed about the most important milestones -
-                alpha release and, of course, the real release - you can sign up
-                to my mailing list.
-              </p>
-              <form
-                action="https://buttondown.email/api/emails/embed-subscribe/conferencebuddy"
-                method="post"
-                target="popupwindow"
-                onsubmit="window.open('https://buttondown.email/conferencebuddy', 'popupwindow')"
-                class="embeddable-buttondown-form"
-              >
-                <label for="bd-email">
-                  Enter your email
-                  <input type="email" name="email" id="bd-email" />
-                </label>
-                <input
-                  className="btn btn-custom btn-primary"
-                  type="submit"
-                  value="Subscribe"
-                />
-                <p>
-                  <a
-                    href="https://buttondown.email"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Powered by Buttondown.
-                  </a>
-                </p>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </div>

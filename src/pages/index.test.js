@@ -1,9 +1,12 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import IndexPage from './index'
+import React from "react";
+import IndexPage from "./index";
+import { render, cleanup } from "@testing-library/react";
 
-describe('IndexPage', () => {
-  it('renders without crashing', () => {
-    const wrapper = shallow(<IndexPage />)
-  })
-})
+describe("<IndexPage />", () => {
+  afterEach(cleanup);
+
+  it("shows all elements", () => {
+    const component = render(<IndexPage />);
+    expect(component.asFragment()).toMatchSnapshot();
+  });
+});

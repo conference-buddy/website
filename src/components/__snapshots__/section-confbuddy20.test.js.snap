@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ConfBuddy20Section /> shows all elements 1`] = `
+<DocumentFragment>
+  <div
+    class="container-fluid position-relative bg-bordered-wave"
+  >
+    <div
+      class="p-content-section"
+      id="onPageLinkId-section-about"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="d-none d-sm-block text-center"
+        >
+          <h2
+            class="display-4"
+          >
+            Conference Buddy 2.0.
+          </h2>
+        </div>
+        <div
+          class="d-block d-sm-none text-center "
+        >
+          <h2>
+            Conference Buddy 2.0.
+          </h2>
+        </div>
+        <div
+          class="pb-5 row justify-content-center"
+        >
+          <div
+            class="col col-lg-8"
+          >
+            <h3
+              class="text-center"
+            >
+              ✨ Webapp in progress ✨
+            </h3>
+            <p>
+              I'm actively working a release of a first MVP for a Conference Buddy web app! You can follow along the progress in the 
+              <a
+                href="https://github.com/conference-buddy/conference-buddy-web-app#readme"
+              >
+                github
+              </a>
+              !
+            </p>
+            <p>
+              If you want to be informed about the most important milestones - alpha release and, of course, the real release - you can sign up to my mailing list.
+            </p>
+          </div>
+        </div>
+        <div
+          class="row col justify-content-center"
+        >
+          <form
+            action="https://buttondown.email/api/emails/embed-subscribe/conferencebuddy"
+            method="post"
+            name="email-subscribe"
+            target="popupwindow"
+          >
+            <label
+              class="sr-only"
+              for="bd-email"
+            >
+              Enter your email
+            </label>
+            <div
+              class="input-group"
+            >
+              <input
+                class="form-control"
+                id="bd-email"
+                name="email"
+                placeholder="Enter your email"
+                type="email"
+              />
+              <div
+                class="input-group-append"
+              >
+                <input
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  value="Subscribe"
+                />
+              </div>
+            </div>
+            <p
+              class="text-center mt-2"
+            >
+              <a
+                href="https://buttondown.email"
+                rel="noreferrer"
+                target="_blank"
+              >
+                Powered by Buttondown.
+              </a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

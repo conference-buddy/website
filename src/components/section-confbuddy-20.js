@@ -33,11 +33,12 @@ function ConfBuddy20Section() {
             <form
               action="https://buttondown.email/api/emails/embed-subscribe/conferencebuddy"
               method="post"
+              name="email-subscribe"
               target="popupwindow"
-              onsubmit="window.open('https://buttondown.email/conferencebuddy', 'popupwindow')"
+              onSubmit="window.open('https://buttondown.email/conferencebuddy', 'popupwindow')"
             >
               {/*eslint-disable-next-line jsx-a11y/label-has-associated-control*/}
-              <label for="bd-email" className="sr-only">
+              <label htmlFor="bd-email" className="sr-only">
                 Enter your email
               </label>
               <div className="input-group">
@@ -49,7 +50,7 @@ function ConfBuddy20Section() {
                   className="form-control"
                 />
 
-                <div class="input-group-append">
+                <div className="input-group-append">
                   <input
                     className="btn btn-outline-secondary"
                     type="submit"

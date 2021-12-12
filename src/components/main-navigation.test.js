@@ -1,15 +1,29 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import MainNav from './main-navigation'
+import React from "react";
+import { render, screen, cleanup } from "@testing-library/react";
+import MainNav from "./main-navigation";
 
-describe('MainNav', () => {
-  it('renders without crashing', () => {
-    shallow(<MainNav />)
-  })
-  describe('renders a navigation', () => {
-    const wrapper = shallow(<MainNav />)
-    it('renders a nav', () => {
-      expect(wrapper.find('nav')).toHaveLength(1)
-    })
-  })
-})
+describe("MainNav", () => {
+  let component;
+  beforeAll(() => {
+    component = render(<MainNav />);
+  });
+
+  afterAll(cleanup);
+
+  it("renders a navigation", () => {
+    const nav = screen.getByRole("navigation");
+
+    expect(nav).toBeVisible();
+  });
+
+  it("renders a link to home", () => {
+    const link = screen.getByRole("link");
+
+    expect(link).toBeVisible();
+    expect(link).toHaveAttribute("href", "/");
+  });
+
+  it("renders all necessary elements", () => {
+    expect(component.asFragment()).toMatchSnapshot();
+  });
+});

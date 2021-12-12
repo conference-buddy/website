@@ -1,9 +1,12 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import NotFoundPage from './404'
+import React from "react";
+import NotFoundPage from "./404";
+import { render, cleanup } from "@testing-library/react";
 
-describe('NotFoundPage', () => {
-  it('renders without crashing', () => {
-    const wrapper = shallow(<NotFoundPage />)
-  })
-})
+describe("<NotFoundPage />", () => {
+  afterEach(cleanup);
+
+  it("shows all elements", () => {
+    const component = render(<NotFoundPage />);
+    expect(component.asFragment()).toMatchSnapshot();
+  });
+});

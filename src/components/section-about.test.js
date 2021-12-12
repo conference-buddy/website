@@ -1,9 +1,24 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import AboutSection from './section-about'
+import React from "react";
+import { screen, render, cleanup } from "@testing-library/react";
+import AboutSection from "./section-about";
 
-describe('<AboutSection />', () => {
-  it('renders without crashing', () => {
-    const wrapper = shallow(<AboutSection />)
-  })
-})
+describe("<AboutSection />", () => {
+  let component;
+  beforeAll(() => {
+    component = render(<AboutSection />);
+  });
+
+  afterAll(cleanup);
+
+  it("shows a header", () => {
+    const header = screen.getByRole("heading", {
+      name: "What is Conference Buddy?",
+    });
+
+    expect(header).toBeVisible();
+  });
+
+  it("shows all elements", () => {
+    expect(component.asFragment()).toMatchSnapshot();
+  });
+});

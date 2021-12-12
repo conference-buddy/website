@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardSpecialOffer /> shows all elements 1`] = `
+<DocumentFragment>
+  <div
+    class="card bg-light shadow-sm m-md-2"
+  >
+    <div
+      class="card-body"
+    >
+      <h3
+        class="card-title text-secondary text-center pb-2"
+      >
+        🔥 A card title 🔥
+      </h3>
+      <h6
+        class="card-subtitle mb-2 text-muted "
+      >
+        subtitle
+      </h6>
+      &lt;div&gt;hello&lt;/div&gt;
+    </div>
+    <div
+      class="card-footer text-muted small"
+    >
+      <span
+        class="text-secondary"
+      >
+        (*) Please note:
+      </span>
+       disclaimer text
+    </div>
+  </div>
+</DocumentFragment>
+`;

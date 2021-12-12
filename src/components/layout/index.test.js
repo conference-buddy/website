@@ -1,10 +1,12 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import Layout from './index'
+import React from "react";
+import Layout from "./index";
+import { render, cleanup } from "@testing-library/react";
 
-describe('Layout', () => {
-  it('renders without crashing', () => {
-    const wrapper = shallow(<Layout children={() => {}} />)
-    expect(wrapper.find('main')).toHaveLength(1)
-  })
-})
+describe("<Layout />", () => {
+  afterEach(cleanup);
+
+  it("shows all elements", () => {
+    const component = render(<Layout />);
+    expect(component.asFragment()).toMatchSnapshot();
+  });
+});

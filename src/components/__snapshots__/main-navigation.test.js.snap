@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainNav renders all necessary elements 1`] = `
+<DocumentFragment>
+  <nav
+    class="MainNav px-sm-4 py-2 px-2 fixed-top d-flex justify-content-between MainNav-bg-out"
+  >
+    <div
+      class="d-none d-sm-block d-flex align-items-center"
+    >
+      <a
+        aria-current="page"
+        class=""
+        href="/"
+      />
+    </div>
+  </nav>
+</DocumentFragment>
+`;

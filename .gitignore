@@ -38,6 +38,7 @@ node_modules/
 # gatsby files
 .cache/
 public
+__mocks__
 
 # Mac files
 .DS_Store

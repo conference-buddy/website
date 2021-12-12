@@ -1,79 +1,74 @@
-import React from 'react'
-import { shallow } from 'enzyme'
-import ExternalLink from './external-link'
+import React from "react";
+import { screen, render, cleanup } from "@testing-library/react";
+import ExternalLink from "./external-link";
 
-const testUrl = 'http://conferencebuddy.io/'
-const classTextLink = 'TextLink'
-const linkText = 'Conference Buddy'
-const linkImage = <img src="image.jpg" />
-
-const additionalClassLinkPrimary = 'TextLink-primary'
-const additionalClassLinkSecondary = 'TextLink-secondary'
+const testUrl = "http://conferencebuddy.io/";
+const linkText = "Conference Buddy";
 
 const requiredProps = {
   url: testUrl,
-  primary: true,
-  secondary: false,
-}
+  children: linkText,
+};
 
-describe('<ExternalLink />', () => {
-  it('renders without crashing', () => {
-    shallow(<ExternalLink {...requiredProps}>{linkText}</ExternalLink>)
-  })
+describe("<ExternalLink />", () => {
+  describe("renders all necessary elements", () => {
+    let component;
+    beforeAll(() => {
+      component = render(<ExternalLink {...requiredProps} />);
+    });
 
-  describe('renders a link with an url and a fixed class', () => {
-    const wrapper = shallow(
-      <ExternalLink url={testUrl}>{linkText}</ExternalLink>
-    )
-    it('renders a link', () => {
-      expect(wrapper.find('a')).toHaveLength(1)
-    })
-    it('renders a link with a url', () => {
-      expect(wrapper.find('a').prop('href')).toEqual(testUrl)
-    })
-    it('renders a link with a class', () => {
-      expect(wrapper.hasClass(classTextLink)).toBe(true)
-    })
-  })
+    afterAll(cleanup);
 
-  describe('renders an a-element with a given content', () => {
-    it('renders a link with a text as children', () => {
-      const wrapper = shallow(
-        <ExternalLink url={testUrl}>{linkText}</ExternalLink>
-      )
-      expect(wrapper.text()).toBe(linkText)
-      expect(wrapper).toMatchSnapshot()
-    })
-    it('renders a link with an image as children', () => {
-      const wrapper = shallow(
-        <ExternalLink url={testUrl}>{linkImage}</ExternalLink>
-      )
-      expect(wrapper.contains(linkImage)).toBe(true)
-      expect(wrapper).toMatchSnapshot()
-    })
-  })
+    it("renders a link with a given url", () => {
+      const link = screen.getByRole("link", {
+        name: linkText,
+      });
 
-  describe('adds a additional class dependend on props', () => {
-    it('adds a class for style primary', () => {
-      const wrapper = shallow(
-        <ExternalLink url={testUrl} primary>
-          {' '}
-          {linkText}
-        </ExternalLink>
-      )
-      expect(wrapper.hasClass(additionalClassLinkPrimary)).toBe(true)
-      expect(wrapper.hasClass(additionalClassLinkSecondary)).toBe(false)
-      expect(wrapper).toMatchSnapshot()
-    })
-    it('adds a class for style secondary', () => {
-      const wrapper = shallow(
-        <ExternalLink url={testUrl} secondary>
-          {linkText}
-        </ExternalLink>
-      )
-      expect(wrapper.hasClass(additionalClassLinkSecondary)).toBe(true)
-      expect(wrapper.hasClass(additionalClassLinkPrimary)).toBe(false)
-      expect(wrapper).toMatchSnapshot()
-    })
-  })
-})
+      expect(link).toHaveAttribute("href", testUrl);
+    });
+
+    it("renders a link with a given linkText", () => {
+      const link = screen.getByRole("link", {
+        name: linkText,
+      });
+
+      expect(link).toHaveAccessibleName(linkText);
+    });
+
+    it("renders a link with TextLink class", () => {
+      const link = screen.getByRole("link", {
+        name: linkText,
+      });
+
+      expect(link).toHaveClass("TextLink");
+    });
+  });
+
+  describe("renders link with different classes dependent on props", () => {
+    afterEach(cleanup);
+
+    it("renders class TextLink-primary", () => {
+      const component = render(
+        <ExternalLink {...requiredProps} primary={true} />
+      );
+      const link = screen.getByRole("link", {
+        name: linkText,
+      });
+
+      expect(link).toHaveClass("TextLink-primary");
+      expect(component.asFragment()).toMatchSnapshot();
+    });
+
+    it("renders class TextLink-secondary", () => {
+      const component = render(
+        <ExternalLink {...requiredProps} secondary={true} />
+      );
+      const link = screen.getByRole("link", {
+        name: linkText,
+      });
+
+      expect(link).toHaveClass("TextLink-secondary");
+      expect(component.asFragment()).toMatchSnapshot();
+    });
+  });
+});

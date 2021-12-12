@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<IntroSection /> shows all elements 1`] = `
+<DocumentFragment>
+  <div
+    class="IntroSection IntroSection-fullscreen-bg bg-clip-ellipse"
+  >
+    <div
+      class="container d-flex align-items-center p-content-section "
+    >
+      <div
+        class="text-center text-light"
+      >
+        <h1
+          class="IntroSection-logo-font"
+        >
+          <strong>
+            Conference Buddy
+          </strong>
+        </h1>
+        <div
+          class="lead py-2 px-3"
+        >
+          <p>
+            Conference Buddy is for everyone who wants to attend a tech conference but is 
+            <strong>
+              afraid to go alone
+            </strong>
+            . It's for everyone at tech events who is 
+            <strong>
+              not comfortable being on their own
+            </strong>
+             all the time. It’s for 
+            <strong>
+              all you
+            </strong>
+             first-timers, Introverts, socially awkwards, timid and shy people out there who are just like me!
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="IntroSection-mouse-scroll-wrapper"
+    >
+      <div
+        class="MouseScrollIcon d-none d-sm-block"
+      >
+        <a
+          href="onPageLinkId-section-about"
+        >
+          <span
+            class="MouseScrollIcon-mouse"
+          >
+            <span
+              class="MouseScrollIcon-wheel"
+            />
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

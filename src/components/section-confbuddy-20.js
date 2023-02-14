@@ -15,12 +15,7 @@ function ConfBuddy20Section() {
             <div className="col col-lg-8">
               <h3 className="text-center">✨ Webapp in progress ✨</h3>
               <p>
-                I'm actively working a release of a first MVP for a Conference
-                Buddy web app! You can follow along the progress in the{" "}
-                <a href="https://github.com/conference-buddy/conference-buddy-web-app#readme">
-                  github
-                </a>
-                !
+                I'm working on a first MVP for a Conference Buddy web app.
               </p>
               <p>
                 If you want to be informed about the most important milestones -
